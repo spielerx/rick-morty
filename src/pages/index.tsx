@@ -1,4 +1,4 @@
-import { CharacterList } from "../components/CharacterList/CharacterList";
+import { CharacterList } from "src/components/CharacterList/CharacterList.tsx";
 
 const Index = () => <CharacterList />;
 

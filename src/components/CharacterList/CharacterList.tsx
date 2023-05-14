@@ -1,10 +1,10 @@
-import { GET_CHARACTERS } from "../../queries/characters";
 import { useQuery } from "@apollo/client";
+import { GET_CHARACTERS } from "queries/characters.ts";
 
 export const CharacterList = () => {
     const { loading, error, data } = useQuery(GET_CHARACTERS, {
         variables: {
-            page: 1,
+            page: 2,
             name: "rick",
         },
         pollInterval: 0,

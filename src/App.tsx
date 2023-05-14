@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { getCharacter } from "rickmortyapi";
-import { CharacterList } from "./components/CharacterList/CharacterList";
+import { CharacterList } from "./components/CharacterList/CharacterList.jsx";
 import "./App.css";
 
 function App() {
