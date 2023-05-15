@@ -5,7 +5,7 @@ import styles from "./Header.module.scss";
 
 export const Header = () => {
     return (
-        <div className={styles.header}>
+        <header className={styles.header}>
             <Link to="/">
                 <div className={styles.logo}>
                     <img src={logo} alt="logo" />
@@ -14,6 +14,6 @@ export const Header = () => {
             <div className={styles.search}>
                 <SearchBox />
             </div>
-        </div>
+        </header>
     );
 };

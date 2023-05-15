@@ -1,5 +1,5 @@
-import React from "react";
+import styles from "./Footer.module.scss";
 
 export const Footer = () => {
-    return <div>Footer</div>;
+    return <footer className={styles.footer}>❮❯ by Fro Tine 2023</footer>;
 };
