@@ -107,7 +107,7 @@ export const CharacterInformation: React.FC<{ id: number }> = ({ id }) => {
                                 ))}
                             </div>
                             <footer className={styles.groupHint}>
-                                showing random 5 residents...
+                                showing 5 random residents...
                             </footer>
                         </article>
                     )}
