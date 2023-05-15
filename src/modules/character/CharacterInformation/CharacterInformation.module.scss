@@ -44,7 +44,7 @@
 
 .groupHint {
     font-size: 0.8rem;
-    margin: 0 0 1rem;
+    margin: 1rem 0 0;
 }
 
 .groupHeading {
@@ -63,8 +63,4 @@
 .previewList {
     display: grid;
     gap: 10px;
-}
-
-.loader {
-    margin-top: 40vh;
 }

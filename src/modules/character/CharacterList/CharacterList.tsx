@@ -22,7 +22,7 @@ export const CharacterList: React.FC<{
         },
     });
 
-    if (loading) return <Loader className={styles.loader} />;
+    if (loading) return <Loader />;
 
     if (error) return <div>Error! {error.message}</div>;
 

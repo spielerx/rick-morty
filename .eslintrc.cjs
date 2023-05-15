@@ -9,7 +9,7 @@ module.exports = {
     parserOptions: { ecmaVersion: "latest", sourceType: "module" },
     plugins: ["react-refresh", "no-relative-import-paths"],
     rules: {
-        "react-refresh/only-export-components": "warn",
+        "react-refresh/only-export-components": "off",
         "no-relative-import-paths/no-relative-import-paths": [
             "warn",
             { allowSameFolder: true },

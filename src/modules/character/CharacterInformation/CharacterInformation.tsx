@@ -22,12 +22,12 @@ export const CharacterInformation: React.FC<{ id: number }> = ({ id }) => {
         },
     });
 
-    if (loading) return <Loader className={styles.loader} />;
+    if (loading) return <Loader />;
 
     if (error) return <div>Error! {error.message}</div>;
 
     return (
-        <div className={styles.wrapper}>
+        <article className={styles.wrapper}>
             <div className="row">
                 <div className="col-12 col-md-5 col-xl-3">
                     <div className="row">
@@ -59,17 +59,14 @@ export const CharacterInformation: React.FC<{ id: number }> = ({ id }) => {
                 </div>
                 <div className="col-12 col-md-7 col-xl-5">
                     {character?.origin?.id && (
-                        <div className={styles.group}>
-                            <h4 className={styles.groupHeading}>
+                        <article className={styles.group}>
+                            <header className={styles.groupHeading}>
                                 {`${character?.origin?.name} · ${character?.origin?.type}`}
                                 <span>
                                     ({character?.origin?.residents?.length}{" "}
                                     residents)
                                 </span>
-                            </h4>
-                            <div className={styles.groupHint}>
-                                showing 5 random residents...
-                            </div>
+                            </header>
                             <div className={styles.previewList}>
                                 {getRandomResidents(
                                     character?.origin?.residents
@@ -82,21 +79,21 @@ export const CharacterInformation: React.FC<{ id: number }> = ({ id }) => {
                                     />
                                 ))}
                             </div>
-                        </div>
+                            <footer className={styles.groupHint}>
+                                showing 5 random residents...
+                            </footer>
+                        </article>
                     )}
 
                     {character?.location?.id && (
-                        <div className={styles.group}>
-                            <h4 className={styles.groupHeading}>
+                        <article className={styles.group}>
+                            <header className={styles.groupHeading}>
                                 {`${character?.location?.name} · ${character?.location?.type}`}
                                 <span>
                                     ({character?.location?.residents?.length}{" "}
                                     residents)
                                 </span>
-                            </h4>
-                            <div className={styles.groupHint}>
-                                showing random 5 residents...
-                            </div>
+                            </header>
                             <div className={styles.previewList}>
                                 {getRandomResidents(
                                     character?.origin?.residents
@@ -109,26 +106,31 @@ export const CharacterInformation: React.FC<{ id: number }> = ({ id }) => {
                                     />
                                 ))}
                             </div>
-                        </div>
+                            <footer className={styles.groupHint}>
+                                showing random 5 residents...
+                            </footer>
+                        </article>
                     )}
                 </div>
                 <div className="col-12 col-md-12 col-xl-4">
-                    <h4 className={styles.groupHeading}>
-                        Episodes
-                        <span>({character?.episode?.length} episodes)</span>
-                    </h4>
-                    {character?.episode?.map(
-                        (episode: Episode, index: number) => (
-                            <div
-                                key={index}
-                                title={`Air date: ${episode.air_date}`}
-                            >
-                                {episode.episode} · {episode.name}
-                            </div>
-                        )
-                    )}
+                    <article>
+                        <header className={styles.groupHeading}>
+                            Episodes
+                            <span>({character?.episode?.length} episodes)</span>
+                        </header>
+                        {character?.episode?.map(
+                            (episode: Episode, index: number) => (
+                                <div
+                                    key={index}
+                                    title={`Air date: ${episode.air_date}`}
+                                >
+                                    {episode.episode} · {episode.name}
+                                </div>
+                            )
+                        )}
+                    </article>
                 </div>
             </div>
-        </div>
+        </article>
     );
 };
