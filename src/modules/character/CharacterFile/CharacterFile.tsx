@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { GET_CHARACTER } from "queries/characters";
-import styles from "./Character.module.scss";
+import styles from "./CharacterFile.module.scss";
 
 export const Character: React.FC<{ id: number }> = ({ id }) => {
     const {
@@ -18,7 +18,7 @@ export const Character: React.FC<{ id: number }> = ({ id }) => {
     if (error) return <div>Error! {error.message}</div>;
 
     return (
-        <div className={styles.character}>
+        <div className={styles.characterFile}>
             Character name: {character?.name}
         </div>
     );

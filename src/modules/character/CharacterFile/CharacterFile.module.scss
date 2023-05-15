@@ -1,0 +1,9 @@
+@use "sass-mq/mq";
+
+.characterFile {
+    font-size: 1.2rem;
+
+    @include mq.mq(tablet) {
+        font-size: 2.4rem;
+    }
+}

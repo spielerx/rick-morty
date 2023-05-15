@@ -1,4 +1,4 @@
-import { Character } from "modules/character/Character";
+import { Character } from "modules/character/CharacterFile/CharacterFile";
 import { Navigate, useParams } from "react-router-dom";
 
 const CharacterPage = () => {

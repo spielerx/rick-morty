@@ -1,4 +1,4 @@
-import { CharacterList } from "modules/character/CharacterList";
+import { CharacterList } from "modules/character/CharacterList/CharacterList";
 import {
     generatePath,
     useNavigate,

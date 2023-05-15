@@ -1,6 +1,9 @@
 import { useQuery } from "@apollo/client";
 import { GET_CHARACTERS } from "queries/characters.ts";
+import { Link } from "react-router-dom";
 import { Character } from "rickmortyapi";
+import { CharacterCard } from "modules/character/CharacterCard/CharacterCard";
+import styles from "./CharacterList.module.scss";
 
 export const CharacterList: React.FC<{
     page?: number;
@@ -33,7 +36,7 @@ export const CharacterList: React.FC<{
     };
 
     return (
-        <div>
+        <div className={styles.characterList}>
             <div>
                 Count: {data?.characters?.results?.length || 0} - Page: {page}
             </div>
@@ -42,7 +45,9 @@ export const CharacterList: React.FC<{
             <div className="row">
                 {data?.characters?.results?.map((character: Character) => (
                     <div key={character.id} className="col-4">
-                        {character.name}
+                        <Link to={`character/${character.id}`}>
+                            <CharacterCard character={character} />
+                        </Link>
                     </div>
                 ))}
             </div>
