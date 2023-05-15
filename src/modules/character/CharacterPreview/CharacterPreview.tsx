@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./CharacterPreview.module.scss";
 
-export const CharacterFilePreview: React.FC<{
+export const CharacterPreview: React.FC<{
     id: number;
     name: string;
     image: string;

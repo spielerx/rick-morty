@@ -43,11 +43,6 @@ body {
     margin: 0;
 }
 
-h1 {
-    font-size: 3.2rem;
-    line-height: 1.1;
-}
-
 @media (prefers-color-scheme: dark) {
     // :root {
     //     color: rgba(255, 255, 255, 0.87);
@@ -55,7 +50,7 @@ h1 {
 }
 
 .main {
-    min-height: 100vh;
+    min-height: 80vh;
 }
 
 p {

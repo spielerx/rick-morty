@@ -1,10 +1,10 @@
-import { CharacterList } from "modules/character/CharacterList/CharacterList";
 import {
     generatePath,
     useNavigate,
     useParams,
     useSearchParams,
 } from "react-router-dom";
+import { CharacterList } from "modules/character/CharacterList/CharacterList";
 import { CHARACTERS_PAGE_ROUTE } from "router/routes";
 
 const CharactersPage = () => {
@@ -23,9 +23,9 @@ const CharactersPage = () => {
 
     return (
         <CharacterList
-            search={searchParams.get("search")}
             page={pageNumber}
             onPageChange={updateCurrentPage}
+            search={searchParams.get("search")}
         />
     );
 };

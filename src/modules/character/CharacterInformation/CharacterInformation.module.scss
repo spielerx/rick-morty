@@ -1,6 +1,6 @@
 @use "sass-mq/mq";
 
-.characterFile {
+.wrapper {
     padding: 2rem;
 }
 
@@ -63,4 +63,8 @@
 .previewList {
     display: grid;
     gap: 10px;
+}
+
+.loader {
+    margin-top: 40vh;
 }

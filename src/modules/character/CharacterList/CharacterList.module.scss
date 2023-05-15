@@ -17,3 +17,20 @@
         }
     }
 }
+
+.empty {
+    text-align: center;
+    padding: 20vh 0;
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    button {
+        margin: 0 auto;
+    }
+}
+
+.loader {
+    margin-top: 40vh;
+}
