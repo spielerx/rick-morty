@@ -1,5 +1,8 @@
 @use "sass-mq/mq";
 
+$bg-color: #ceb2fc;
+$bg-color-light: #f0e7ff;
+
 .characterCardMq {
     font-size: 1.2rem;
 
@@ -9,11 +12,6 @@
 }
 
 .characterCard {
-    --bg-color: #ceb2fc;
-    --bg-color-light: #f0e7ff;
-    --text-color-hover: #fff;
-    --box-shadow-color: rgba(206, 178, 252, 0.48);
-
     width: 100%;
     height: 360px;
     background: #fff;
@@ -31,22 +29,22 @@
     &:hover {
         transform: translateY(-5px) scale(1.005) translateZ(0);
         box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11),
-            0 24px 46px var(--box-shadow-color);
+            0 24px 46px rgba(206, 178, 252, 0.48);
 
         .overlay {
             transform: scale(6) translateZ(0);
         }
 
         .circle {
-            border-color: var(--bg-color-light);
-            background: var(--bg-color);
+            border-color: $bg-color-light;
+            background: $bg-color;
             &:after {
-                background: var(--bg-color-light);
+                background: $bg-color-light;
             }
         }
 
         .information * {
-            color: var(--text-color-hover);
+            color: #fff;
         }
     }
 }
@@ -59,7 +57,7 @@
         height: 131px;
         border-radius: 50%;
         background: #fff;
-        border: 2px solid var(--bg-color);
+        border: 2px solid $bg-color;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -82,7 +80,7 @@
             height: 118px;
             display: block;
             position: absolute;
-            background: var(--bg-color);
+            background: $bg-color;
             border-radius: 50%;
             top: 7px;
             left: 7px;
@@ -95,7 +93,7 @@
         position: absolute;
         height: 118px;
         border-radius: 50%;
-        background: var(--bg-color);
+        background: $bg-color;
         z-index: 0;
         transition: transform 0.3s ease-out;
     }
