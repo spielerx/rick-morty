@@ -1,32 +1,24 @@
 import { useQuery } from "@apollo/client";
 import { GET_CHARACTERS } from "queries/characters.ts";
-import { generatePath, useNavigate } from "react-router-dom";
 import { Character } from "rickmortyapi";
-import { CHARACTERS_PAGE_ROUTE } from "router/routes";
 
 export const CharacterList: React.FC<{
     page?: number;
     search?: string;
-}> = ({ page = 1, search = "" }) => {
+    onPageChange?: (page: number) => void;
+}> = ({ page = 1, search = "", onPageChange }) => {
     const { loading, error, data } = useQuery(GET_CHARACTERS, {
         variables: {
             page,
             name: search,
         },
     });
-    const navigate = useNavigate();
 
     if (loading) return <div>Loading...</div>;
 
     if (error) return <div>Error! {error.message}</div>;
 
     const totalPages = data?.characters?.info?.pages || 0;
-
-    const updateCurrentPage = (page: number) => {
-        navigate(
-            generatePath(CHARACTERS_PAGE_ROUTE, { page: page.toString() })
-        );
-    };
 
     const handlePagination = (direction: number) => {
         let newPage = page + direction;
@@ -37,7 +29,7 @@ export const CharacterList: React.FC<{
             newPage = totalPages - 1;
         }
 
-        updateCurrentPage(newPage);
+        onPageChange && onPageChange(newPage);
     };
 
     return (
