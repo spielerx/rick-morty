@@ -39,9 +39,11 @@ export const CharacterList: React.FC<{
             </div>
             <div>Total pages: {totalPages}</div>
             <br />
-            <div>
+            <div className="row">
                 {data?.characters?.results?.map((character: Character) => (
-                    <div key={character.id}>{character.name}</div>
+                    <div key={character.id} className="col-4">
+                        {character.name}
+                    </div>
                 ))}
             </div>
             <div>
