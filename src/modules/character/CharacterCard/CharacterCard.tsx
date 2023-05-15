@@ -1,6 +1,6 @@
 import React from "react";
-import { Character } from "rickmortyapi";
 import { GiBracers, GiCompass } from "react-icons/gi";
+import { Character } from "rickmortyapi";
 import styles from "./CharacterCard.module.scss";
 
 export const CharacterCard: React.FC<{ character: Character }> = ({
@@ -19,10 +19,7 @@ export const CharacterCard: React.FC<{ character: Character }> = ({
                 <p className={styles.name}>{character.name}</p>
                 <p className={styles.race}>
                     <GiBracers />
-                    {character.status === "unknown"
-                        ? "Dead"
-                        : character.status}{" "}
-                    - {character.species}
+                    {character.status} - {character.species}
                 </p>
                 <div className={styles.location}>
                     <span>Last known location:</span>

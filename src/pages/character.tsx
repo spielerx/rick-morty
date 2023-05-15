@@ -1,4 +1,4 @@
-import { Character } from "modules/character/CharacterFile/CharacterFile";
+import { CharacterFile } from "modules/character/CharacterFile/CharacterFile";
 import { Navigate, useParams } from "react-router-dom";
 
 const CharacterPage = () => {
@@ -9,7 +9,7 @@ const CharacterPage = () => {
         return <Navigate to="/" state={{ from: location }} />;
     }
 
-    return <Character id={+characterId} />;
+    return <CharacterFile id={+characterId} />;
 };
 
 export default CharacterPage;

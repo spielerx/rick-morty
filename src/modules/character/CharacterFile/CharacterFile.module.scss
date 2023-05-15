@@ -1,9 +1,66 @@
 @use "sass-mq/mq";
 
 .characterFile {
-    font-size: 1.2rem;
+    padding: 2rem;
+}
+
+.image {
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 0 1rem;
 
     @include mq.mq(tablet) {
-        font-size: 2.4rem;
+        width: 20vw;
+        height: 20vw;
+        margin: 0 0 2rem;
     }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.name {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.field {
+    font-weight: 900;
+    span {
+        display: inline-block;
+        min-width: 70px;
+        font-weight: 400;
+    }
+}
+
+.group {
+    padding: 0 0 2rem;
+}
+
+.groupHint {
+    font-size: 0.8rem;
+    margin: 0 0 1rem;
+}
+
+.groupHeading {
+    padding: 0.4rem 0.8rem;
+    margin: 0 0 1rem;
+    display: flex;
+    background: #ceb2fc;
+    font-weight: 400;
+    color: #000;
+
+    span {
+        margin-left: auto;
+    }
+}
+
+.previewList {
+    display: grid;
+    gap: 10px;
 }
