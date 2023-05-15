@@ -1,9 +1,126 @@
 @use "sass-mq/mq";
 
-.characterCard {
+.characterCardMq {
     font-size: 1.2rem;
 
     @include mq.mq(tablet) {
         font-size: 2.4rem;
+    }
+}
+
+.characterCard {
+    --bg-color: #ceb2fc;
+    --bg-color-light: #f0e7ff;
+    --text-color-hover: #fff;
+    --box-shadow-color: rgba(206, 178, 252, 0.48);
+
+    width: 100%;
+    height: 321px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.04);
+    transition: all 0.5s ease-out;
+    text-decoration: none;
+
+    &:hover {
+        transform: translateY(-5px) scale(1.005) translateZ(0);
+        box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11),
+            0 24px 46px var(--box-shadow-color);
+
+        .overlay {
+            transform: scale(6) translateZ(0);
+        }
+
+        .circle {
+            border-color: var(--bg-color-light);
+            background: var(--bg-color);
+            &:after {
+                background: var(--bg-color-light);
+            }
+        }
+
+        .information * {
+            color: var(--text-color-hover);
+        }
+    }
+}
+
+.avatar {
+    position: relative;
+
+    .circle {
+        width: 131px;
+        height: 131px;
+        border-radius: 50%;
+        background: #fff;
+        border: 2px solid var(--bg-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        transition: all 0.3s ease-out;
+        overflow: hidden;
+
+        img {
+            z-index: 10000;
+            transform: translateZ(0);
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        &:after {
+            content: "";
+            width: 118px;
+            height: 118px;
+            display: block;
+            position: absolute;
+            background: var(--bg-color);
+            border-radius: 50%;
+            top: 7px;
+            left: 7px;
+            transition: opacity 0.3s ease-out;
+        }
+    }
+
+    .overlay {
+        width: 118px;
+        position: absolute;
+        height: 118px;
+        border-radius: 50%;
+        background: var(--bg-color);
+        z-index: 0;
+        transition: transform 0.3s ease-out;
+    }
+}
+
+.information {
+    z-index: 1;
+    padding-top: 1rem;
+    transition: color 0.3s ease-out;
+    padding: 1rem;
+}
+
+.name {
+    font-size: 1.3rem;
+    color: #4c5656;
+}
+
+.race {
+    font-size: 1rem;
+}
+
+.location {
+    span {
+        font-size: 0.75rem;
+        display: block;
+        color: #333 !important;
     }
 }

@@ -2,8 +2,7 @@
     background: var(--color-primary);
     color: white;
     font-family: inherit;
-    padding: 0.45em;
-    padding-left: 1em;
+    padding: 2rem 1.45em;
     font-size: 17px;
     font-weight: 500;
     border-radius: 0.9em;
@@ -16,11 +15,26 @@
     overflow: hidden;
     position: relative;
     height: 2.8em;
-    padding-right: 3em;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 0 1.6em -0.6em #ffffff, 0.05em 0.05em #5566c2;
+    }
 
     &:active {
         transform: translate(0.05em, 0.05em);
         box-shadow: 0.05em 0.05em #5566c2;
+    }
+
+    &:disabled {
+        background: #ccc;
+        color: #000;
+        box-shadow: inset 0 0 1.6em -0.6em #ccc;
+        cursor: not-allowed;
+
+        svg * {
+            fill: #000;
+        }
     }
 }
 

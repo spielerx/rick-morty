@@ -3,6 +3,9 @@ import { GET_CHARACTERS } from "queries/characters.ts";
 import { Link } from "react-router-dom";
 import { Character } from "rickmortyapi";
 import { CharacterCard } from "modules/character/CharacterCard/CharacterCard";
+import { Button } from "modules/common/Button/Button";
+import { ReactComponent as ArrowLeft } from "assets/icons/arrow-left.svg";
+import { ReactComponent as ArrowRight } from "assets/icons/arrow-right.svg";
 import styles from "./CharacterList.module.scss";
 
 export const CharacterList: React.FC<{
@@ -23,7 +26,7 @@ export const CharacterList: React.FC<{
 
     const totalPages = data?.characters?.info?.pages || 0;
 
-    const handlePagination = (direction: number) => {
+    const handleNavigation = (direction: number) => {
         let newPage = page + direction;
         if (newPage < 1) {
             newPage = 1;
@@ -37,33 +40,42 @@ export const CharacterList: React.FC<{
 
     return (
         <div className={styles.characterList}>
-            <div>
-                Count: {data?.characters?.results?.length || 0} - Page: {page}
-            </div>
-            <div>Total pages: {totalPages}</div>
-            <br />
             <div className="row">
                 {data?.characters?.results?.map((character: Character) => (
-                    <div key={character.id} className="col-4">
-                        <Link to={`character/${character.id}`}>
+                    <div
+                        key={character.id}
+                        className="col-12 col-xs-6 col-sm-4 col-md-3 col-xxl-2"
+                    >
+                        <Link to={`/character/${character.id}`}>
                             <CharacterCard character={character} />
                         </Link>
                     </div>
                 ))}
             </div>
-            <div>
-                <button
-                    onClick={() => handlePagination(-1)}
+            <div className={styles.navigation}>
+                <Button
+                    onClick={() => handleNavigation(-1)}
                     disabled={page <= 1}
                 >
+                    <ArrowLeft />
                     Prev page
-                </button>
-                <button
-                    onClick={() => handlePagination(1)}
+                </Button>
+
+                <div className={styles.stats}>
+                    <div>
+                        Count: {data?.characters?.results?.length || 0} - Page:
+                        {page}
+                    </div>
+                    <div>Total pages: {totalPages}</div>
+                </div>
+
+                <Button
+                    onClick={() => handleNavigation(1)}
                     disabled={page >= totalPages}
                 >
                     Next page
-                </button>
+                    <ArrowRight />
+                </Button>
             </div>
         </div>
     );

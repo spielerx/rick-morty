@@ -1,4 +1,19 @@
 @use "sass-mq/mq";
 
 .characterList {
+    padding: 2rem;
+}
+
+.navigation {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+
+    @include mq.mq(false, tablet) {
+        padding: 2rem 0rem;
+
+        .stats {
+            display: none;
+        }
+    }
 }

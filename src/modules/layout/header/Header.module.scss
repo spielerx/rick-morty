@@ -1,9 +1,16 @@
+@use "sass-mq/mq";
+
 .header {
     display: flex;
     align-items: center;
-    padding: 1em 4rem;
+    gap: 1rem;
+    padding: 1em 2rem;
     background: #fff;
     width: 100%;
+
+    @include mq.mq(tablet) {
+        padding: 1em 4rem;
+    }
 }
 
 .logo {
