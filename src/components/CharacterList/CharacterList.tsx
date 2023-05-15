@@ -10,7 +10,6 @@ export const CharacterList: React.FC<{ page: number; search?: string }> = ({
             page,
             name: search,
         },
-        pollInterval: 0,
     });
 
     if (loading) return <div>Loading...</div>;

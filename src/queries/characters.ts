@@ -7,20 +7,38 @@ export const GET_CHARACTERS = gql`
                 count
             }
             results {
-                name
+                ...CharacterFragment
+                location {
+                    id
+                    name
+                }
+                episode {
+                    id
+                    name
+                }
             }
         }
     }
 `;
 
 export const GET_CHARACTER = gql`
-    query GetCharacters($page: Int!, $name: String) {
-        characters(page: $page, filter: { name: $name }) {
-            info {
-                count
+    query GetCharacter($id: ID!) {
+        character(id: $id) {
+            ...CharacterFragment
+            origin {
+                ...LocationFragment
             }
-            results {
+            location {
+                ...LocationFragment
+            }
+            episode {
+                id
                 name
+                air_date
+                episode
+                characters {
+                    ...CharacterFragment
+                }
             }
         }
     }
