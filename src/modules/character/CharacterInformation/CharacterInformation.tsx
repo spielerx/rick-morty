@@ -96,7 +96,7 @@ export const CharacterInformation: React.FC<{ id: number }> = ({ id }) => {
                             </header>
                             <div className={styles.previewList}>
                                 {getRandomResidents(
-                                    character?.origin?.residents
+                                    character?.location?.residents
                                 ).map((resident: Character) => (
                                     <CharacterPreview
                                         key={resident.id}
