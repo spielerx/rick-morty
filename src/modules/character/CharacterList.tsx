@@ -4,7 +4,7 @@ import { Character } from "rickmortyapi";
 
 export const CharacterList: React.FC<{
     page?: number;
-    search?: string;
+    search?: string | null;
     onPageChange?: (page: number) => void;
 }> = ({ page = 1, search = "", onPageChange }) => {
     const { loading, error, data } = useQuery(GET_CHARACTERS, {
