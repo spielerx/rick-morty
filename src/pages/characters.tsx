@@ -1,4 +1,4 @@
-import { CharacterList } from "components/CharacterList/CharacterList";
+import { CharacterList } from "modules/character/CharacterList";
 import { generatePath, useNavigate, useParams } from "react-router-dom";
 import { CHARACTERS_PAGE_ROUTE } from "router/routes";
 
